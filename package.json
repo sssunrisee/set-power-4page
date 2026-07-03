@@ -5,9 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "vite build",
-    "preview": "vite preview",
-    "format": "oxfmt"
+    "build": "npx vite build",
+    "preview": "npx vite preview"
   },
   "dependencies": {
     "framer-motion": "^12.42.2",
