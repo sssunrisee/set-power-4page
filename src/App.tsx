@@ -2,11 +2,16 @@ import { HashRouter, Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import About from './components/About'
+import Mission from './components/Mission'
+import Vision from './components/Vision'
+import WhySET from './components/WhySET'
+import Directions from './components/Directions'
 import Services from './components/Services'
 import Industries from './components/Industries'
 import Projects from './components/Projects'
 import Academy from './components/Academy'
 import Partners from './components/Partners'
+import CEO from './components/CEO'
 import Documents from './components/Documents'
 import News from './components/News'
 import Contact from './components/Contact'
@@ -14,11 +19,15 @@ import Footer from './components/Footer'
 
 function HomePage() {
   return (
-    <div className="bg-[#080C14] text-[#E2EAF4] min-h-screen">
+    <div className="bg-white text-[#0A1628] min-h-screen">
       <Nav />
       <main>
         <Hero />
         <About />
+        <Mission />
+        <Vision />
+        <WhySET />
+        <CEO />
       </main>
       <Footer />
     </div>
@@ -27,9 +36,10 @@ function HomePage() {
 
 function ServicesPage() {
   return (
-    <div className="bg-white text-[#0B1D3A] min-h-screen">
+    <div className="bg-white text-[#0A1628] min-h-screen">
       <Nav />
       <main>
+        <Directions />
         <Services />
         <Industries />
       </main>
@@ -40,7 +50,7 @@ function ServicesPage() {
 
 function ProjectsPage() {
   return (
-    <div className="bg-white text-[#0B1D3A] min-h-screen">
+    <div className="bg-white text-[#0A1628] min-h-screen">
       <Nav />
       <main>
         <Projects />
@@ -54,7 +64,7 @@ function ProjectsPage() {
 
 function ContactPage() {
   return (
-    <div className="bg-[#F5F7FA] text-[#0B1D3A] min-h-screen">
+    <div className="bg-[#F8FAFC] text-[#0A1628] min-h-screen">
       <Nav />
       <main>
         <Documents />

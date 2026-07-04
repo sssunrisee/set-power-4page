@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 const links = [
-  { label: 'Главная', href: '/' },
-  { label: 'Услуги', href: '/services' },
-  { label: 'Проекты', href: '/projects' },
-  { label: 'Контакты', href: '/contact' },
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 export default function Nav() {
@@ -33,17 +33,17 @@ export default function Nav() {
           <div>
             <div
               className={`font-condensed font-bold text-sm tracking-[0.12em] uppercase transition-colors ${
-                scrolled ? 'text-[#0B1D3A]' : 'text-white'
+                scrolled ? 'text-[#0A1628]' : 'text-white'
               }`}
             >
-              SET Power
+              SET
             </div>
             <div
               className={`font-condensed text-[10px] tracking-[0.1em] uppercase transition-colors ${
                 scrolled ? 'text-[#5A7090]' : 'text-[#7A9CC0]'
               }`}
             >
-              setpower.az
+              Smart Engineering Technologies
             </div>
           </div>
         </Link>
@@ -66,9 +66,9 @@ export default function Nav() {
 
         <Link
           to="/contact"
-          className="hidden xl:flex items-center gap-2 px-5 py-2.5 bg-[#D4AF37] text-[#0B1D3A] font-condensed font-bold text-[12px] tracking-[0.1em] uppercase hover:bg-[#E8C84A] transition-colors duration-200 flex-shrink-0"
+          className="hidden xl:flex items-center gap-2 px-5 py-2.5 bg-[#00A9E0] text-white font-condensed font-bold text-[12px] tracking-[0.1em] uppercase hover:bg-[#00BFFF] transition-colors duration-200 flex-shrink-0"
         >
-          Запросить встречу
+          Contact Us
         </Link>
 
         <button

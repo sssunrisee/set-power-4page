@@ -1,134 +1,56 @@
 import { motion } from 'framer-motion'
 
-const values = [
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <path d="M14 2L26 8v12L14 26 2 20V8L14 2z" stroke="#0056B3" strokeWidth="1.5" />
-        <path d="M14 8v8M10 12h8" stroke="#0056B3" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
-    title: 'Инженерная точность',
-    desc: 'Каждое решение основано на стандартах, расчётах и глубокой технической экспертизе.',
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <circle cx="14" cy="14" r="11" stroke="#0056B3" strokeWidth="1.5" />
-        <path d="M14 8v6l4 2" stroke="#0056B3" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
-    title: 'Цифровое мышление',
-    desc: 'Проектируем системы будущего: от SCADA до ИИ-аналитики и предиктивного обслуживания.',
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <path d="M4 24V10l10-8 10 8v14H4z" stroke="#0056B3" strokeWidth="1.5" />
-        <path d="M10 24v-8h8v8" stroke="#0056B3" strokeWidth="1.5" />
-      </svg>
-    ),
-    title: 'Результат для клиента',
-    desc: 'Наш KPI — реальный экономический эффект и операционная эффективность заказчика.',
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <circle cx="10" cy="14" r="6" stroke="#0056B3" strokeWidth="1.5" />
-        <circle cx="20" cy="14" r="6" stroke="#0056B3" strokeWidth="1.5" />
-        <path d="M14 10v8" stroke="#0056B3" strokeWidth="1" strokeLinecap="round" />
-      </svg>
-    ),
-    title: 'Открытое партнёрство',
-    desc: 'Работаем по модели разделения результата — наш успех зависит от успеха клиента.',
-  },
-]
-
 export default function About() {
   return (
-    <section className="bg-white py-20 lg:py-28">
-      <div className="bg-[#0B1D3A] py-20 lg:py-28">
-        <div className="max-w-[1380px] mx-auto px-6 lg:px-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-px bg-[#D4AF37]" />
-                <span className="font-condensed text-[11px] tracking-[0.3em] uppercase text-[#D4AF37] font-semibold">О компании</span>
-              </div>
-              <h2 className="font-condensed font-bold text-[clamp(2.2rem,4.5vw,3.8rem)] text-white leading-tight tracking-tight mb-6">
-                Инженерная компания с фокусом на результат
-              </h2>
-              <p className="text-[#A0B8D8] leading-relaxed text-base font-light">
-                SET — это команда инженеров и разработчиков из Баку. Мы проектируем и внедряем
-                системы автоматизации для энергетики и нефтегаза.
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="space-y-5"
-            >
-              <div className="border-l-2 border-[#D4AF37] pl-6">
-                <div className="font-condensed text-[11px] tracking-[0.2em] uppercase text-[#D4AF37] mb-2 font-semibold">Миссия</div>
-                <p className="text-white font-display font-medium text-lg leading-snug">
-                  Ускорить цифровую трансформацию стратегических отраслей.
-                </p>
-              </div>
-              <div className="border-l-2 border-[#0056B3] pl-6 mt-6">
-                <div className="font-condensed text-[11px] tracking-[0.2em] uppercase text-[#00A9E0] mb-2 font-semibold">Видение 2030–2035</div>
-                <p className="text-[#A0B8D8] leading-relaxed">
-                  Стать ведущим инженерно-технологическим партнёром для энергетического сектора СНГ.
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </div>
-
-      <div className="py-20 lg:py-28 bg-white">
-        <div className="max-w-[1380px] mx-auto px-6 lg:px-10">
+    <section className="bg-white py-24 lg:py-32">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-16"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.8 }}
           >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-px bg-[#0056B3]" />
-              <span className="font-condensed text-[11px] tracking-[0.3em] uppercase text-[#0056B3] font-semibold">Ценности</span>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-12 h-px bg-[#00A9E0]" />
+              <span className="font-condensed text-[11px] tracking-[0.4em] uppercase text-[#00A9E0] font-semibold">About SET</span>
             </div>
-            <h3 className="font-condensed font-bold text-[clamp(1.8rem,3.5vw,2.8rem)] text-[#0B1D3A] tracking-tight">
-              Принципы нашей работы
-            </h3>
+            <h2 className="font-display font-bold text-[clamp(2rem,4vw,3.5rem)] text-[#0A1628] leading-tight tracking-tight mb-8">
+              Engineering Company Focused on Results
+            </h2>
+            <p className="text-[#5A7090] leading-relaxed text-lg font-light mb-6">
+              SET is a team of engineers and developers from Baku, Azerbaijan. We design and implement 
+              automation systems for energy and oil & gas sectors, working with real challenges — 
+              from initial audit to launch and ongoing support.
+            </p>
+            <p className="text-[#5A7090] leading-relaxed text-lg font-light">
+              Founded by practicing engineers, we bring deep industry knowledge combined with 
+              cutting-edge digital technologies to every project we undertake.
+            </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((v, i) => (
-              <motion.div
-                key={v.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="bg-[#F5F7FA] p-8 group hover:shadow-[0_4px_24px_rgba(0,86,179,0.1)] hover:bg-white transition-all duration-300 cursor-default border border-transparent hover:border-[#DDE3ED]"
-              >
-                <div className="mb-5">{v.icon}</div>
-                <h4 className="font-condensed font-bold text-[#0B1D3A] text-lg mb-3 group-hover:text-[#0056B3] transition-colors">
-                  {v.title}
-                </h4>
-                <p className="text-[#5A7090] text-sm leading-relaxed">{v.desc}</p>
-              </motion.div>
-            ))}
-          </div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="space-y-8"
+          >
+            <div className="border-l-2 border-[#00A9E0] pl-8">
+              <div className="font-condensed text-[11px] tracking-[0.3em] uppercase text-[#00A9E0] mb-3 font-semibold">Our Mission</div>
+              <p className="font-display text-[#0A1628] text-xl font-medium leading-snug">
+                Accelerate the digital transformation of strategic industries by implementing 
+                world-class solutions with respect for regional specifics.
+              </p>
+            </div>
+            <div className="border-l-2 border-[#0A1628]/20 pl-8">
+              <div className="font-condensed text-[11px] tracking-[0.3em] uppercase text-[#0A1628]/60 mb-3 font-semibold">Vision 2030–2035</div>
+              <p className="text-[#5A7090] leading-relaxed text-lg font-light">
+                Become the leading engineering-technological partner for the energy and industrial 
+                sectors in CIS and Middle East regions.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
