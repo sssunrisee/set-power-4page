@@ -4,7 +4,9 @@ import { Link, useLocation } from 'react-router-dom'
 const links = [
   { label: 'Home', href: '/' },
   { label: 'Services', href: '/services' },
-  { label: 'Projects', href: '/projects' },
+  { label: 'Industries', href: '/industries' },
+  { label: 'Academy', href: '/academy' },
+  { label: 'Partners', href: '/partners' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -23,23 +25,23 @@ export default function Nav() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${
         scrolled
-          ? 'bg-white/95 backdrop-blur-sm shadow-[0_1px_0_#DDE3ED]'
-          : 'bg-[#0B1D3A]'
+          ? 'bg-white/95 backdrop-blur-sm shadow-[0_1px_0_#E2E8F0]'
+          : 'bg-[#0A1628]'
       }`}
     >
-      <div className="max-w-[1380px] mx-auto px-6 lg:px-10 h-[68px] flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 flex-shrink-0">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-12 h-[72px] flex items-center justify-between">
+        <Link to="/" className="flex items-center gap-4 flex-shrink-0">
           <img src="/logo.png" alt="SET" className="h-10 w-auto" />
           <div>
             <div
-              className={`font-condensed font-bold text-sm tracking-[0.12em] uppercase transition-colors ${
+              className={`font-display font-bold text-base tracking-wide transition-colors ${
                 scrolled ? 'text-[#0A1628]' : 'text-white'
               }`}
             >
               SET
             </div>
             <div
-              className={`font-condensed text-[10px] tracking-[0.1em] uppercase transition-colors ${
+              className={`font-condensed text-[9px] tracking-[0.15em] uppercase transition-colors ${
                 scrolled ? 'text-[#5A7090]' : 'text-[#7A9CC0]'
               }`}
             >
@@ -48,15 +50,15 @@ export default function Nav() {
           </div>
         </Link>
 
-        <nav className="hidden xl:flex items-center gap-0">
+        <nav className="hidden xl:flex items-center gap-1">
           {links.map((l) => (
             <Link
               key={l.href}
               to={l.href}
               className={`px-4 py-2 text-[12px] font-medium tracking-wide transition-colors duration-150 ${
                 location.pathname === l.href
-                  ? scrolled ? 'text-[#0056B3]' : 'text-white'
-                  : scrolled ? 'text-[#2A4A7A] hover:text-[#0056B3]' : 'text-[#A0B8D8] hover:text-white'
+                  ? scrolled ? 'text-[#00A9E0]' : 'text-white'
+                  : scrolled ? 'text-[#2A4A7A] hover:text-[#00A9E0]' : 'text-[#A0B8D8] hover:text-white'
               }`}
             >
               {l.label}
@@ -66,13 +68,13 @@ export default function Nav() {
 
         <Link
           to="/contact"
-          className="hidden xl:flex items-center gap-2 px-5 py-2.5 bg-[#00A9E0] text-white font-condensed font-bold text-[12px] tracking-[0.1em] uppercase hover:bg-[#00BFFF] transition-colors duration-200 flex-shrink-0"
+          className="hidden xl:flex items-center gap-2 px-6 py-2.5 bg-[#00A9E0] text-white font-condensed font-bold text-[11px] tracking-[0.12em] uppercase hover:bg-[#00BFFF] transition-colors duration-200 flex-shrink-0"
         >
           Contact Us
         </Link>
 
         <button
-          className={`xl:hidden p-2 transition-colors ${scrolled ? 'text-[#0B1D3A]' : 'text-white'}`}
+          className={`xl:hidden p-2 transition-colors ${scrolled ? 'text-[#0A1628]' : 'text-white'}`}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Menu"
         >
@@ -88,7 +90,7 @@ export default function Nav() {
       </div>
 
       {mobileOpen && (
-        <div className="xl:hidden bg-[#0B1D3A] border-t border-[#1A3058] px-6 py-5 space-y-0">
+        <div className="xl:hidden bg-[#0A1628] border-t border-[#1A3058] px-6 py-5 space-y-0">
           {links.map((l) => (
             <Link
               key={l.href}
@@ -102,9 +104,9 @@ export default function Nav() {
           <Link
             to="/contact"
             onClick={() => setMobileOpen(false)}
-            className="block mt-4 py-3 text-center bg-[#D4AF37] text-[#0B1D3A] font-condensed font-bold text-[12px] tracking-[0.1em] uppercase"
+            className="block mt-4 py-3 text-center bg-[#00A9E0] text-white font-condensed font-bold text-[12px] tracking-[0.1em] uppercase"
           >
-            Запросить встречу
+            Contact Us
           </Link>
         </div>
       )}

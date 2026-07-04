@@ -41,20 +41,42 @@ function ServicesPage() {
       <main>
         <Directions />
         <Services />
-        <Industries />
       </main>
       <Footer />
     </div>
   )
 }
 
-function ProjectsPage() {
+function IndustriesPage() {
   return (
     <div className="bg-white text-[#0A1628] min-h-screen">
       <Nav />
       <main>
+        <Industries />
         <Projects />
+      </main>
+      <Footer />
+    </div>
+  )
+}
+
+function AcademyPage() {
+  return (
+    <div className="bg-white text-[#0A1628] min-h-screen">
+      <Nav />
+      <main>
         <Academy />
+      </main>
+      <Footer />
+    </div>
+  )
+}
+
+function PartnersPage() {
+  return (
+    <div className="bg-white text-[#0A1628] min-h-screen">
+      <Nav />
+      <main>
         <Partners />
       </main>
       <Footer />
@@ -82,7 +104,9 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/services" element={<ServicesPage />} />
-        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/industries" element={<IndustriesPage />} />
+        <Route path="/academy" element={<AcademyPage />} />
+        <Route path="/partners" element={<PartnersPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </HashRouter>
