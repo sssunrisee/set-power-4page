@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import path from 'node:path'
 
 export default defineConfig({
-  base: '/',
+  base: '/set-power-4page/',
   plugins: [
     react(),
     tailwindcss(),
