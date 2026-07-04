@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { submitContactForm } from '../api'
 
 const contactInfo = [
   {
@@ -38,10 +39,23 @@ const contactInfo = [
 export default function Contact() {
   const [form, setForm] = useState({ name: '', company: '', email: '', phone: '', message: '' })
   const [sent, setSent] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSent(true)
+    setLoading(true)
+    setError('')
+
+    try {
+      await submitContactForm(form)
+      setSent(true)
+      setForm({ name: '', company: '', email: '', phone: '', message: '' })
+    } catch (err) {
+      setError('Произошла ошибка. Попробуйте позже или напишите на info@setpower.az')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -85,6 +99,15 @@ export default function Contact() {
                 </motion.div>
               ))}
             </div>
+
+            <div className="mt-10 flex gap-3">
+              <a href="#" className="px-5 py-2.5 bg-[#0B1D3A] text-white font-condensed font-bold text-[11px] tracking-[0.12em] uppercase hover:bg-[#0D2144] transition-colors">
+                LinkedIn
+              </a>
+              <a href="#" className="px-5 py-2.5 border border-[#DDE3ED] text-[#0B1D3A] font-condensed font-bold text-[11px] tracking-[0.12em] uppercase hover:border-[#0056B3] hover:text-[#0056B3] transition-colors">
+                WhatsApp
+              </a>
+            </div>
           </motion.div>
 
           <motion.div
@@ -119,6 +142,12 @@ export default function Contact() {
                 <div className="font-condensed font-bold text-[11px] tracking-[0.2em] uppercase text-[#5A7090] mb-6 pb-4 border-b border-[#DDE3ED]">
                   Форма обратной связи
                 </div>
+
+                {error && (
+                  <div className="p-4 bg-red-50 border border-red-200 text-red-700 text-sm rounded">
+                    {error}
+                  </div>
+                )}
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
@@ -189,9 +218,10 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 bg-[#D4AF37] text-[#0B1D3A] font-condensed font-bold text-[13px] tracking-[0.12em] uppercase hover:bg-[#E8C84A] transition-colors duration-200"
+                  disabled={loading}
+                  className="w-full py-3.5 bg-[#D4AF37] text-[#0B1D3A] font-condensed font-bold text-[13px] tracking-[0.12em] uppercase hover:bg-[#E8C84A] transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Отправить запрос
+                  {loading ? 'Отправка...' : 'Отправить запрос'}
                 </button>
 
                 <p className="text-center text-[11px] text-[#5A7090]">

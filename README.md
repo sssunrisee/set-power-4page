@@ -1,45 +1,74 @@
-# SET Power - 4-Page Version
+# SET Power - 4-Page Website
 
-Сайт SET Power - 4-страничный вариант.
+Corporate website for SET Power - Smart Engineering Technologies
 
-## Структура
+## Features
 
-- `/` - Главная (Hero + About)
-- `/services` - Услуги (Services)
-- `/projects` - Проекты (Projects)
-- `/contact` - Контакты (Contact)
+- 4-page SPA with React Router
+- Fully responsive design
+- Framer Motion animations
+- Contact form with backend API
+- Documents and News sections
+- SET Academy courses catalog
+- Partnership formats
 
-## Запуск
+## Tech Stack
+
+- React 19
+- TypeScript
+- Vite 8
+- Tailwind CSS 4
+- Framer Motion
+- React Router
+
+## Development
 
 ```bash
 npm install
 npm run dev
 ```
 
-Открой http://localhost:3002
+Open http://localhost:3002
 
-## Деплой
+## Build
 
-### Vercel
-1. Зайди на vercel.com
-2. New Project → выбери этот репозиторий
-3. Framework: Vite
-4. Deploy
+```bash
+npm run build
+```
 
-### Netlify
-1. Зайди на netlify.com
-2. Add new site → Import an existing project
-3. Подключи GitHub, выбери репозиторий
-4. Build command: `npm run build`
-5. Publish directory: `dist`
+## Deployment
 
 ### GitHub Pages
-1. Settings → Pages
-2. Source: GitHub Actions
-3. При каждом пуше в main сайт автоматически деплоится
 
-## Домен
+1. Enable GitHub Pages in repository settings
+2. Set Source to "GitHub Actions"
+3. Push to main branch - workflow will auto-deploy
 
-После подключения домена setpower.az:
-- Настрой DNS записи у провайдера
-- Привяжи домен в настройках хостинга (Vercel/Netlify)
+### Custom Domain (testing.sungroup.space)
+
+1. Add CNAME record pointing to `sssunrisee.github.io`
+2. Add `testing.sungroup.space` to GitHub Pages custom domains
+3. Enable HTTPS enforcement
+
+## Backend API
+
+Backend is hosted on `testing.sungroup.space/api`
+
+- `POST /api/contact` - Contact form submission
+- `GET /api/documents` - Documents list
+- `GET /api/news` - News articles
+
+## Project Structure
+
+```
+src/
+├── components/     # Reusable components
+├── pages/         # Page components (if needed)
+├── api.ts         # API client
+├── App.tsx        # Main app with routing
+└── main.tsx       # Entry point
+```
+
+## License
+
+© 2026 SET Power. All rights reserved.
