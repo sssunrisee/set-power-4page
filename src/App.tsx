@@ -16,6 +16,9 @@ import Documents from './components/Documents'
 import News from './components/News'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import Manifesto from './components/Manifesto'
+import Philosophy from './components/Philosophy'
+import Values from './components/Values'
 
 function HomePage() {
   return (
@@ -98,6 +101,42 @@ function ContactPage() {
   )
 }
 
+function ManifestoPage() {
+  return (
+    <div className="bg-white text-[#0A1628] min-h-screen">
+      <Nav />
+      <main>
+        <Manifesto />
+      </main>
+      <Footer />
+    </div>
+  )
+}
+
+function PhilosophyPage() {
+  return (
+    <div className="bg-white text-[#0A1628] min-h-screen">
+      <Nav />
+      <main>
+        <Philosophy />
+      </main>
+      <Footer />
+    </div>
+  )
+}
+
+function ValuesPage() {
+  return (
+    <div className="bg-white text-[#0A1628] min-h-screen">
+      <Nav />
+      <main>
+        <Values />
+      </main>
+      <Footer />
+    </div>
+  )
+}
+
 export default function App() {
   return (
     <HashRouter>
@@ -108,6 +147,9 @@ export default function App() {
         <Route path="/academy" element={<AcademyPage />} />
         <Route path="/partners" element={<PartnersPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/manifesto" element={<ManifestoPage />} />
+        <Route path="/philosophy" element={<PhilosophyPage />} />
+        <Route path="/values" element={<ValuesPage />} />
       </Routes>
     </HashRouter>
   )

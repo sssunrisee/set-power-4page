@@ -65,13 +65,13 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
-              className="font-display font-bold leading-[1.05] mb-8"
+              className="font-display font-bold leading-[1.1] mb-8"
             >
-              <span className="block text-[clamp(3rem,6vw,5.5rem)] text-white tracking-tight">
-                SET
+              <span className="block text-[clamp(2.5rem,6vw,4.5rem)] text-white tracking-tight">
+                Engineering Intelligence
               </span>
-              <span className="block text-[clamp(1.5rem,3vw,2.5rem)] text-[#00A9E0] tracking-tight font-light mt-4">
-                Digital Energy • Smart Grids • AI • Industrial Automation
+              <span className="block text-[clamp(2.5rem,6vw,4.5rem)] text-white tracking-tight">
+                for Energy & Industry
               </span>
             </motion.h1>
 
@@ -82,8 +82,8 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-[#A0B8D8] text-lg leading-relaxed mb-12 max-w-xl font-light"
             >
-              International engineering company delivering intelligent solutions 
-              for energy, oil & gas, and industrial sectors. Headquartered in Baku, Azerbaijan.
+              Создаём интеллектуальные инженерные решения для энергетики, нефтегаза и промышленности. 
+              Объединяем знания, технологии и ответственность ради устойчивого развития.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -97,19 +97,13 @@ export default function Hero() {
                 to="/contact"
                 className="px-8 py-4 bg-[#00A9E0] text-white font-condensed font-bold text-[13px] tracking-[0.15em] uppercase hover:bg-[#00BFFF] transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,169,224,0.3)]"
               >
-                Contact Us
+                Связаться с нами
               </Link>
               <Link
-                to="/contact"
+                to="/manifesto"
                 className="px-8 py-4 border border-white/30 text-white font-condensed font-semibold text-[13px] tracking-[0.15em] uppercase hover:border-white hover:bg-white/10 transition-all duration-300"
               >
-                Download Presentation
-              </Link>
-              <Link
-                to="/contact"
-                className="px-8 py-4 border border-[#00A9E0]/50 text-[#00A9E0] font-condensed font-semibold text-[13px] tracking-[0.15em] uppercase hover:bg-[#00A9E0]/10 transition-all duration-300"
-              >
-                Request Meeting
+                Читать манифест
               </Link>
             </motion.div>
           </motion.div>
@@ -123,10 +117,10 @@ export default function Hero() {
           >
             <div className="grid grid-cols-2 gap-px bg-white/10">
               {[
-                { num: '10+', label: 'Strategic Projects', sub: 'in pipeline' },
-                { num: '5', label: 'Key Directions', sub: 'of expertise' },
-                { num: '2035', label: 'Vision Horizon', sub: 'international growth' },
-                { num: '360°', label: 'Engineering', sub: 'full-cycle approach' },
+                { num: '7', label: 'Стратегических', sub: 'платформ' },
+                { num: '2035', label: 'Видение', sub: 'развития' },
+                { num: '12', label: 'Принципов', sub: 'философии' },
+                { num: '∞', label: 'Инженерное', sub: 'наследие' },
               ].map((stat, i) => (
                 <motion.div
                   key={stat.label}

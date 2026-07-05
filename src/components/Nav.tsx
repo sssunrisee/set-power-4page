@@ -2,12 +2,15 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 const links = [
-  { label: 'Home', href: '/' },
-  { label: 'Services', href: '/services' },
-  { label: 'Industries', href: '/industries' },
-  { label: 'Academy', href: '/academy' },
-  { label: 'Partners', href: '/partners' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Главная', href: '/' },
+  { label: 'Манифест', href: '/manifesto' },
+  { label: 'Философия', href: '/philosophy' },
+  { label: 'Ценности', href: '/values' },
+  { label: 'Услуги', href: '/services' },
+  { label: 'Отрасли', href: '/industries' },
+  { label: 'Академия', href: '/academy' },
+  { label: 'Партнёры', href: '/partners' },
+  { label: 'Контакты', href: '/contact' },
 ]
 
 export default function Nav() {
@@ -55,7 +58,7 @@ export default function Nav() {
             <Link
               key={l.href}
               to={l.href}
-              className={`px-4 py-2 text-[12px] font-medium tracking-wide transition-colors duration-150 ${
+              className={`px-3 py-2 text-[11px] font-medium tracking-wide transition-colors duration-150 ${
                 location.pathname === l.href
                   ? scrolled ? 'text-[#00A9E0]' : 'text-white'
                   : scrolled ? 'text-[#2A4A7A] hover:text-[#00A9E0]' : 'text-[#A0B8D8] hover:text-white'
@@ -70,7 +73,7 @@ export default function Nav() {
           to="/contact"
           className="hidden xl:flex items-center gap-2 px-6 py-2.5 bg-[#00A9E0] text-white font-condensed font-bold text-[11px] tracking-[0.12em] uppercase hover:bg-[#00BFFF] transition-colors duration-200 flex-shrink-0"
         >
-          Contact Us
+          Связаться
         </Link>
 
         <button
@@ -90,7 +93,7 @@ export default function Nav() {
       </div>
 
       {mobileOpen && (
-        <div className="xl:hidden bg-[#0A1628] border-t border-[#1A3058] px-6 py-5 space-y-0">
+        <div className="xl:hidden bg-[#0A1628] border-t border-[#1A3058] px-6 py-5 space-y-0 max-h-[80vh] overflow-y-auto">
           {links.map((l) => (
             <Link
               key={l.href}
@@ -106,7 +109,7 @@ export default function Nav() {
             onClick={() => setMobileOpen(false)}
             className="block mt-4 py-3 text-center bg-[#00A9E0] text-white font-condensed font-bold text-[12px] tracking-[0.1em] uppercase"
           >
-            Contact Us
+            Связаться с нами
           </Link>
         </div>
       )}
